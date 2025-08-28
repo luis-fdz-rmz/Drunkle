@@ -9,6 +9,7 @@ const today_date = new Date()
 let timeDifference = today_date - drunkle_Start_date;
 let daysDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
 let keyPressHandler;
+let colors = new Set(["grey", "green", "yellow"])
 
 let container = document.createElement('div');
 container.id = 'container';
@@ -216,9 +217,9 @@ async function startDrunkle() {
 
     for (let i =0; i <result.length; i++){
       if (Math.random() <0.1){
-        console.log(result[i]);
-        result[i] = ["grey", "yellow", "green"][Math.floor(Math.random()*3)];
-        console.log(result[i]);
+        // console.log(result[i]);
+        result[i] = Array.from(colors.difference(new Set([result[i]])))[Math.floor(Math.random()*2)];
+        // console.log(result[i]);
 
       }
     }
