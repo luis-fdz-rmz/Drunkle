@@ -1,0 +1,138 @@
+html, body{
+    background-color: #737373;
+	margin:0 auto;
+	padding:0;
+	width:100%;
+	height:100%;
+	overflow:hidden;
+	font-family: fantasy;
+}
+
+#container{
+	width: 100%;
+	max-width: 80%;
+	margin: 0 auto;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	border-left: 1px solid;
+	border-right: 1px solid;
+}
+
+.logo{
+	text-align: center;
+	margin-top: 12px;
+	cursor:pointer;
+	text-shadow: 2px 3px 2px #000;
+	transition:.5s
+}
+
+.logo:hover{
+	filter: brightness(1.125);
+}
+
+.logo_purple, .logo_green{
+	font-size: 26px;
+	color: #fff;
+	width: 49px;
+	height: 35px;
+	border-radius: 12px;
+	margin: 3px;
+	display: inline-block;
+}
+
+.logo_purple{
+	background-color: #3f005c;
+}
+
+.logo_green{
+	background-color: #004d00;
+}
+
+.navigation_bar{
+	text-align: center;
+	height: 33px;
+	margin-top: 11px;
+}
+
+#give_up_button{
+	padding: 5px 10px;
+	font-size: 17px;
+	cursor: pointer;
+}
+
+.game_area{
+    margin-top:5px;
+    overflow-y: scroll; 
+    max-height: 900px;
+    min-height: 500px;
+}
+
+.row, .row_block{
+	display: flex;
+	justify-content: center;
+	margin: 5px;
+}
+
+.row_block{
+	font-size: 40px;
+	border: 1px solid;
+	width: 56px;
+	height: 51px;
+	border-radius: 12px;
+}
+
+#notification{
+	font-family: arial;
+	text-align: center;
+	letter-spacing: 1px;
+	font-size: 19px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	height: 22px;
+}
+
+#keyboard {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* spacing between rows */
+}
+
+#top_keys, #mid_keys, #bot_keys {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px; /* spacing between keys */
+}
+
+.keyboardKey_s, .keyboardKey_m, .keyboardKey_l {
+  background-color: #c5c5c5;
+  color: #000;
+  font-size: 18px;
+  /* font-weight: bold; */
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s, transform 0.1s;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.25);
+}
+
+.keyboardKey_s { width: 40px; }
+.keyboardKey_m { width: 48px; }
+.keyboardKey_l { width: 64px; }
+
+/* Hover effect */
+.keyboardKey_s:hover, .keyboardKey_m:hover, .keyboardKey_l:hover {
+  filter: brightness(1.1);
+  transform: scale(1.05);
+}
+
+/* Colors updated by JS */
+.blockGreen { background-color: #004d00 !important; color: #fff !important; }
+.blockGold  { background-color: #3f005c !important; color: #fff !important; }
+.blockGrey  { background-color: #555 !important;   color: #fff !important; }
