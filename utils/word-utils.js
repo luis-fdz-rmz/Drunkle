@@ -275,6 +275,11 @@ async function startDrunkle() {
       nextRowBlock = 0;
     }
   }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Backspace') {
+      e.preventDefault(); // prevent browser back navigation
+    }
+  });
 }
 
 startDrunkle();
