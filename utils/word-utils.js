@@ -30,7 +30,7 @@ async function startDrunkle() {
   nextRowBlock = 0;
   remNotification = 0;
 
-  const response = await fetch('Drunkle/wordlist/drunkle.txt');
+  const response = await fetch('Drunkle/utils/drunkle.txt');
   const text = await response.text();
   wordlist = text.split(/\r?\n/);
   const randomIndex = Math.floor(Math.random() * (wordlist.length - 1));
