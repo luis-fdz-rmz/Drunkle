@@ -30,9 +30,14 @@ async function startDrunkle() {
   nextRowBlock = 0;
   remNotification = 0;
 
-  const response = await fetch('Drunkle/utils/drunkle.txt');
-  const text = await response.text();
-  wordlist = text.split(/\r?\n/);
+ try {
+    const response = await fetch('utils/drunkle.json');
+    const drunkle_object = await response.json();
+    console.log(wordlist); // or use the wordlist however you need
+    wordlist = drunkle_object["words"];
+  } catch (error) {
+    console.error("Failed to load JSON:", error);
+  }
   const randomIndex = Math.floor(Math.random() * (wordlist.length - 1));
   drunkle_answer = wordlist[randomIndex].toUpperCase();
   console.log(drunkle_answer);
