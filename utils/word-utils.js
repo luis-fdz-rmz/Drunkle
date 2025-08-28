@@ -33,7 +33,6 @@ async function startDrunkle() {
  try {
     const response = await fetch('utils/drunkle.json');
     const drunkle_object = await response.json();
-    console.log(wordlist); // or use the wordlist however you need
     wordlist = drunkle_object["words"];
   } catch (error) {
     console.error("Failed to load JSON:", error);
