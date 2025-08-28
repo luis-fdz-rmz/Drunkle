@@ -4,7 +4,10 @@ let gameFin = 0;
 let remNotification = 0;
 let drunkle_answer;
 let wordlist;
-
+const drunkle_Start_date = new Date('2025-08-28')
+const today_date = new Date()
+let timeDifference = today_date - drunkle_Start_date;
+let daysDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
 let keyPressHandler;
 
 let container = document.createElement('div');
@@ -34,12 +37,12 @@ async function startDrunkle() {
     const response = await fetch('utils/drunkle.json');
     const drunkle_object = await response.json();
     wordlist = drunkle_object["words"];
+    const randomIndex = daysDifference;
+    drunkle_answer = wordlist[randomIndex].toUpperCase();
+    console.log(drunkle_answer);
   } catch (error) {
     console.error("Failed to load JSON:", error);
   }
-  const randomIndex = Math.floor(Math.random() * (wordlist.length - 1));
-  drunkle_answer = wordlist[randomIndex].toUpperCase();
-  console.log(drunkle_answer);
 
   // --- Logo ---
   let logo = document.createElement('div');
