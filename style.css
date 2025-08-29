@@ -55,7 +55,7 @@ html, body{
 	margin-top: 11px;
 }
 
-#give_up_button{
+#give_up_button, #amnesiacle, #drunkle, #randomWord{
 	padding: 5px 10px;
 	font-size: 17px;
 	cursor: pointer;
@@ -64,8 +64,8 @@ html, body{
 .game_area{
     margin-top:5px;
     overflow-y: scroll; 
-    max-height: 900px;
-    min-height: 500px;
+    max-height: auto;
+    min-height: auto;
 }
 
 .row, .row_block{
@@ -133,6 +133,41 @@ html, body{
 }
 
 /* Colors updated by JS */
-.blockGreen { background-color: #004d00 !important; color: #fff !important; }
-.blockGold  { background-color: #3f005c !important; color: #fff !important; }
-.blockGrey  { background-color: #555 !important;   color: #fff !important; }
+.blockGreen { 
+	background-color: #004d00 !important; 
+	color: #fff !important;
+	transform-style: preserve-3d;
+  	transition: transform 0.3s ease}
+.blockGold  { 
+	background-color: #3f005c !important; 
+	color: #fff !important; 
+	transform-style: preserve-3d;
+  	transition: transform 0.3s ease}
+.blockGrey  { 
+	background-color: #555 !important;
+	color: #fff !important;
+	transform-style: preserve-3d;
+  	transition: transform 0.3s ease }
+
+
+.amnesicac  { 
+	background-color: #555 !important;
+	color: #fff !important; 
+	animation: 100;}
+
+
+.flip {
+  animation: flip 0.6s forwards;
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(90deg); /* hidden at halfway */
+  }
+  100% {
+    transform: rotateX(0deg); /* back face visible */
+  }
+}
